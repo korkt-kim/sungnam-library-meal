@@ -45,7 +45,7 @@ module.exports = {
       plugins: ['@typescript-eslint', 'import'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        project: ['./tsconfig.json', './apps/*/tsconfig.json'],
+        project: ['./tsconfig.json'],
       },
       settings: {
         'import/internal-regex': '^~/',
@@ -55,7 +55,7 @@ module.exports = {
           },
           typescript: {
             alwaysTryTypes: true,
-            project: ['./tsconfig.json', './apps/*/tsconfig.json'],
+            project: ['./tsconfig.json'],
           },
         },
       },
@@ -76,6 +76,7 @@ module.exports = {
     {
       files: ['**/*.ts', '**/*.tsx'],
       rules: {
+        'import/newline-after-import': 'error',
         '@typescript-eslint/no-unused-vars': [
           'error',
           { argsIgnorePattern: '^_', ignoreRestSiblings: true },
@@ -85,7 +86,6 @@ module.exports = {
   ],
 
   rules: {
-    'import/newline-after-import': 'error',
     'padding-line-between-statements': [
       'warn',
       { blankLine: 'always', prev: '*', next: 'return' },
